@@ -12,6 +12,16 @@ class Patient
     def appointments
         Appointment.all.select { |obj| obj.patient.name == self.name }
     end
+    def doctors
+        doctors_found = []
+        Appointment.all.each do |obj|
+            if obj.patient.name == self.name
+                doctors_found << obj.doctor
+
+            end
+        end
+        doctors_found.uniq
+    end
     def self.all
         @@all
     end

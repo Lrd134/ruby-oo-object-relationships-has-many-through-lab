@@ -1,3 +1,4 @@
+require 'pry'
 class Doctor
     attr_reader :name, :patient, :appointment
     @@all = []
@@ -15,10 +16,11 @@ class Doctor
         patients_found = []
         Appointment.all.each do |arr |
             if arr.doctor.name == self.name
-               
+                
                 patients_found << arr.patient
             end
         end
+        patients_found
     end
     def self.all
         @@all

@@ -13,8 +13,13 @@ class Artist
         Song.new(name, self, genre)
     end
     def genres
-
-
+        genres_found = []
+        Song.all.each do | obj |
+            if obj.artist.name == self.name
+                genres_found << obj.genre
+            end
+        end
+        genres_found
     end
     def self.all
         @@all

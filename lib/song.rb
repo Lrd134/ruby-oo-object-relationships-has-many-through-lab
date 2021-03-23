@@ -7,9 +7,6 @@ class Song
         @genre = genre
         @@all << self
     end
-    def genre
-        self.genre.name
-    end
 
     def self.all
         @@all
