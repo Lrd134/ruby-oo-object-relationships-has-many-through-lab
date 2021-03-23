@@ -13,11 +13,7 @@ class Artist
         Song.new(name, self, genre)
     end
     def genres
-        Song.all.collect do |arr | 
-            if arr.artist.name == self.name
-                return arr.genre
-            end
-        end
+
 
     end
     def self.all
